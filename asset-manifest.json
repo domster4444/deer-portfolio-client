@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/deer-portfolio-client/static/css/main.83ebc7eb.chunk.css",
-    "main.js": "/deer-portfolio-client/static/js/main.77a92a3d.chunk.js",
-    "main.js.map": "/deer-portfolio-client/static/js/main.77a92a3d.chunk.js.map",
+    "main.js": "/deer-portfolio-client/static/js/main.4dd1a2dc.chunk.js",
+    "main.js.map": "/deer-portfolio-client/static/js/main.4dd1a2dc.chunk.js.map",
     "runtime-main.js": "/deer-portfolio-client/static/js/runtime-main.67dd46a9.js",
     "runtime-main.js.map": "/deer-portfolio-client/static/js/runtime-main.67dd46a9.js.map",
     "static/js/2.15d00dec.chunk.js": "/deer-portfolio-client/static/js/2.15d00dec.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "/deer-portfolio-client/index.html",
     "static/css/main.83ebc7eb.chunk.css.map": "/deer-portfolio-client/static/css/main.83ebc7eb.chunk.css.map",
     "static/js/2.15d00dec.chunk.js.LICENSE.txt": "/deer-portfolio-client/static/js/2.15d00dec.chunk.js.LICENSE.txt",
-    "static/js/main.77a92a3d.chunk.js.LICENSE.txt": "/deer-portfolio-client/static/js/main.77a92a3d.chunk.js.LICENSE.txt",
+    "static/js/main.4dd1a2dc.chunk.js.LICENSE.txt": "/deer-portfolio-client/static/js/main.4dd1a2dc.chunk.js.LICENSE.txt",
     "static/media/main.css": "/deer-portfolio-client/static/media/fa-solid-900.e4efd599.woff",
     "static/media/dummy-profile.c7b14d79.png": "/deer-portfolio-client/static/media/dummy-profile.c7b14d79.png",
     "static/media/getFetch.cjs": "/deer-portfolio-client/static/media/getFetch.582d29c4.cjs",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.67dd46a9.js",
     "static/js/2.15d00dec.chunk.js",
     "static/css/main.83ebc7eb.chunk.css",
-    "static/js/main.77a92a3d.chunk.js"
+    "static/js/main.4dd1a2dc.chunk.js"
   ]
 }
