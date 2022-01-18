@@ -1,7 +1,0 @@
-//! broadcast that , a  user has left the chat to all other
-
-//! message from admin after successful circuit establishment
-
-//! send message to socket server
-
-//! the ()=> takes "state" as parameter. the state has the initialState
