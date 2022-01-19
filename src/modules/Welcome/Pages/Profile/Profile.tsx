@@ -18,11 +18,22 @@ const Profile = () => {
   const { allUserData } = useSelector(
     (state: RootStateOrAny) => state.allUserDataState
   );
-
-  const accountDatas = allUserData.allUserData;
-  console.log(accountDatas);
-
-  const { firstName, lastName, email, url } = accountDatas;
+  let firstName: string;
+  let lastName: string;
+  let email: string;
+  let url: string;
+  if (allUserData === null) {
+    firstName = 'undefined';
+    lastName = 'undefined';
+    email = 'undefined';
+    url = 'undefined';
+  } else {
+    const accountDatas = allUserData.allUserData;
+    firstName = accountDatas.firstName;
+    lastName = accountDatas.lastName;
+    email = accountDatas.email;
+    url = accountDatas.url;
+  }
   return (
     <>
       <DashboardDrawer />
