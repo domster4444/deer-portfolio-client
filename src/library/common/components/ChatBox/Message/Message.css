@@ -1,0 +1,28 @@
+.MessageContainer {
+  color: black;
+}
+
+.MessageContainer__message--left {
+  background: lightgrey;
+  margin: 0.5rem 0rem;
+  border-radius: 1.75rem;
+  padding: 0.55rem 1.5rem;
+  font-size: 1.6rem;
+  max-width: 20%;
+}
+
+.MessageContainer__message--right {
+  color: white;
+  border-radius: 1.75rem;
+  padding: 0.55rem 1.5rem;
+  font-size: 1.6rem;
+  margin: 0.5rem 0rem;
+  background: slateblue;
+  max-width: 20%;
+  transform: translateX(350%);
+}
+
+.MessageContainer__message--user {
+  color: white;
+  font-size: 1.2rem !important;
+}

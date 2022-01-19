@@ -1,0 +1,40 @@
+.explore {
+  width: 80vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media only screen and (min-width: 475px) and (max-width: 5000px) {
+    display: flex;
+  }
+  div {
+    @media only screen and (max-width: 800px) {
+      margin: 1rem;
+      width: 70%;
+    }
+  }
+}
+.chart__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  // background-color: red;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  &__left {
+    width: 100%;
+    // background-color: skyblue;
+  }
+  &__right {
+    .upper__division {
+      min-height: 25rem;
+      // background-color: yellow;
+    }
+    .lower__division {
+      min-height: 25rem;
+      // background-color: thistle;
+    }
+    width: 100%;
+    // background-color: slateblue;
+  }
+}

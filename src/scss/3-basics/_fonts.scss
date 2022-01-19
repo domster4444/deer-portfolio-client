@@ -1,0 +1,37 @@
+// *Poppins
+//! path must be relative to main.css file
+
+// ?thin
+@font-face {
+  font-family: 'poppins_thin';
+  src: url('./3-basics/fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+}
+
+// ?extra light
+@font-face {
+  font-family: 'poppins_extralight';
+  src: url('./3-basics/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+}
+
+// ?light
+@font-face {
+  font-family: 'poppins_light';
+  src: url('./3-basics/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+}
+
+// ? regular
+@font-face {
+  font-family: 'poppins_regular';
+  src: url('./3-basics/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+//? medium
+@font-face {
+  font-family: 'poppins_medium';
+  src: url('./3-basics/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+}
+
+// ? semibold
+@font-face {
+  font-family: 'poppins_semibold';
+  src: url('./3-basics/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+}

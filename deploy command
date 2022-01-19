@@ -1,0 +1,4 @@
+git add .
+git commit 
+push
+npm run deploy to git pages 
