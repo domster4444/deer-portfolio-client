@@ -5,6 +5,7 @@ import loginReducer from 'library/common/components/stateSlices/loginSlice';
 import passwordResetEmailReducer from 'library/common/components/stateSlices/passwordResetEmailSlice';
 import passwordResetPasswordReducer from 'library/common/components/stateSlices/passwordResetPasswordSlice';
 import authOStateReducer from 'features/AuthOLoggedInUser/AuthOStateSlice';
+import allUserStateReducer from 'features/AllUserDataSlice/AllUserDataSlice';
 
 const loggedInUserFromStorage = localStorage.getItem('loggedInUser')
   ? JSON.parse(localStorage.getItem('loggedInUser'))
@@ -17,6 +18,7 @@ const preloadedState = {
 
 export default configureStore({
   reducer: {
+    allUserDataState: allUserStateReducer,
     authOState: authOStateReducer,
     register: registerReducer,
     login: loginReducer,

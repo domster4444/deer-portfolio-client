@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-wrap-multilines */
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
@@ -22,7 +24,7 @@ interface State {
   showPassword: boolean;
 }
 
-export default function InputAdornments() {
+export default function Form({ firstName, lastName, email, url }: any) {
   const [values, setValues] = React.useState<State>({
     amount: '',
     password: '',
@@ -58,12 +60,14 @@ export default function InputAdornments() {
           id="filled-start-adornment"
           sx={{ m: 1, width: '25ch' }}
           variant="filled"
+          value={firstName}
         />
         <TextField
           label="Last Name"
           id="filled-start-adornment"
           sx={{ m: 1, width: '25ch' }}
           variant="filled"
+          value={lastName}
         />
         <br />
         <TextField
@@ -71,6 +75,7 @@ export default function InputAdornments() {
           id="filled-start-adornment"
           sx={{ m: 1, width: '25ch' }}
           variant="filled"
+          value={email}
         />
         <TextField
           label="Contact Number"

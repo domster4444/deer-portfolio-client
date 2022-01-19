@@ -96,7 +96,7 @@ const Register = () => {
     console.log(`uploadImage${base64EncodedImage}`);
     try {
       console.log('try catch block of fetch');
-      await fetch('https://deer-portfolio-server.herokuapp.com/api/upload', {
+      await fetch('http://localhost:5000/api/upload', {
         method: 'POST',
         body: JSON.stringify({ data: base64EncodedImage }),
         headers: { 'Content-Type': 'application/json' },

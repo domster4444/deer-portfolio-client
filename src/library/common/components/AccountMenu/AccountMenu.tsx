@@ -1,4 +1,12 @@
+/* eslint-disable operator-linebreak */
 import React, { useState, useEffect } from 'react';
+import { RootStateOrAny, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from 'library/common/components/stateSlices/loginSlice';
+import { setAuthOLogoutState } from 'features/AuthOLoggedInUser/AuthOStateSlice';
+import constant from 'constant';
+
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -13,6 +21,39 @@ import Logout from '@mui/icons-material/Logout';
 import AccountMenuSkeleton from './AccountMenuSkeleton';
 
 export default function AccountMenu() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logoutSubmitHandler = () => {
+    window.open(`${constant.serverURL}/auth/logout`, '_self');
+    dispatch(setAuthOLogoutState());
+    // @ts-ignore: Unreachable code error
+    dispatch(logout());
+    localStorage.removeItem('loggedInUser');
+    navigate('/');
+  };
+
+  const { allUserData } = useSelector(
+    (state: RootStateOrAny) => state.allUserDataState
+  );
+
+  console.log('allUserData in account.tsx test::', allUserData);
+  // const accountDatas = allUserData.allUserData;
+  // console.log(accountDatas);
+
+  // const { url } = accountDatas;
+
+  const [url, setUrl] = useState('');
+  useEffect(() => {
+    if (allUserData === null) {
+      setUrl(
+        'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+      );
+    } else {
+      setUrl(allUserData.allUserData.url);
+    }
+  }, [allUserData]);
+
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -45,7 +86,15 @@ export default function AccountMenu() {
           >
             {(() => {
               if (isLoaded === true) {
-                return <Avatar sx={{ width: 50, height: 50 }}>M</Avatar>;
+                return (
+                  <Avatar
+                    alt="profile picture"
+                    src={url}
+                    sx={{ width: 50, height: 50 }}
+                  >
+                    M
+                  </Avatar>
+                );
               }
               return <AccountMenuSkeleton />;
             })()}
@@ -88,11 +137,11 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem style={{ fontSize: '1.4rem' }}>
-          <Avatar />
+          <Avatar alt="profile picture" src={url} />
           Profile
         </MenuItem>
         <MenuItem style={{ fontSize: '1.4rem' }}>
-          <Avatar />
+          <Avatar alt="profile picture" src={url} />
           My account
         </MenuItem>
         <Divider />
@@ -108,7 +157,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem style={{ fontSize: '1.4rem' }}>
+        <MenuItem onClick={logoutSubmitHandler} style={{ fontSize: '1.4rem' }}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
