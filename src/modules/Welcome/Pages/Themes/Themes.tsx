@@ -1,6 +1,8 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable object-curly-newline */
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import React from 'react';
+import React, { useState } from 'react';
 import ScrollToTop from 'react-scroll-to-top';
 
 import './Themes.css';
@@ -156,6 +158,20 @@ const allThemes = [
 ];
 
 const Themes = () => {
+  const [filter, setFilter] = useState('');
+  const inputChangeHandler = (e: any) => {
+    setFilter(e.target.value);
+  };
+
+  const dataSearch = allThemes.filter((item) => {
+    return Object.keys(item).some((key) =>
+      // @ts-ignore
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase())
+    );
+  });
   return (
     <div>
       <DashboardDrawer />
@@ -166,9 +182,20 @@ const Themes = () => {
           <AccountMenu />
           <header className="text">Themes</header>
           <BreadCrumb currentPath="payment" />
+          <div className="input_container">
+            <h1>{filter}</h1>
+            <input
+              style={{ fontSize: '2rem' }}
+              type="text"
+              value={filter}
+              onChange={(e) => {
+                inputChangeHandler(e);
+              }}
+            />
+          </div>
           <div className="theme__cardContainer">
             {(() => {
-              return allThemes.map((item) => (
+              return dataSearch.map((item) => (
                 <ThemeCard
                   key={item.name}
                   url={item.url}

@@ -103,7 +103,8 @@ const ThemeCard = ({ url, name, description, imageUrl }: ThemeProps) => {
           return (
             <ThemeCardSmall>
               <ThemeCardImg src={`${imageUrl}`} alt="" />
-
+              <br />
+              {name}
               <div
                 className="themeCard__btnContainer"
                 style={themeCardBtnContainer}
