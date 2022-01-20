@@ -93,7 +93,7 @@ const ThemeCard = ({ url, name, description, imageUrl }: ThemeProps) => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true);
-    }, 3000);
+    }, 800);
   }, []);
 
   return (
@@ -110,7 +110,9 @@ const ThemeCard = ({ url, name, description, imageUrl }: ThemeProps) => {
                 style={themeCardBtnContainer}
               >
                 <PreviewBtn className="medium" type="button">
-                  <a href={`${url}`}>Preview</a>
+                  <a rel="noreferrer" target="_blank" href={`${url}`}>
+                    Preview
+                  </a>
                 </PreviewBtn>
                 <UseBtn className="medium" type="button">
                   Use

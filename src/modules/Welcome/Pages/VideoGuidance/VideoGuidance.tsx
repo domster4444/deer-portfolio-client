@@ -6,8 +6,9 @@ import DashboardDrawer from 'library/common/components/DashboardDrawer/Dashboard
 // ?  components
 import BreadCrumb from 'library/common/components/BreadCrumb/BreadCrumb';
 import AccountMenu from 'library/common/components/AccountMenu/AccountMenu';
+import Video from './components/Video';
 
-const CustomerChat = () => {
+const VideoGuidance = () => {
   return (
     <>
       <DashboardDrawer />
@@ -15,12 +16,14 @@ const CustomerChat = () => {
       <section className="home-section">
         <div>
           <AccountMenu />
-          <header className="text">CustomerChat</header>
-          <BreadCrumb currentPath="CustomerChat" />
+          <header className="text">Guidance</header>
+          <BreadCrumb currentPath="VideoGuidance" />
+
+          <Video />
         </div>
       </section>
     </>
   );
 };
 
-export default CustomerChat;
+export default VideoGuidance;

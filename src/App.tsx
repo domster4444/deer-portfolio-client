@@ -30,7 +30,7 @@ import Themes from 'modules/Welcome/Pages/Themes/Themes';
 
 // themes
 import FirstTheme from 'themes/1FirstTheme/FirstTheme';
-import CustomerChat from 'modules/Welcome/Pages/CustomerChat/CustomerChat';
+import VideoGuidance from 'modules/Welcome/Pages/VideoGuidance/VideoGuidance';
 import ChatBox from 'library/common/components/ChatBox/ChatBox';
 import PageNotFound from 'modules/PageNotFound/PageNotFound';
 
@@ -237,12 +237,12 @@ const App = () => {
           }
         />
         <Route
-          path="/chat"
+          path="/videoguidance"
           element={
             loggedInUser === null && authOUser === null ? (
               <Login />
             ) : (
-              <CustomerChat />
+              <VideoGuidance />
             )
           }
         />

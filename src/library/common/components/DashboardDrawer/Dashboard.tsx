@@ -96,11 +96,11 @@ const Dashboard = () => {
           <span className="tooltip">Analytics</span>
         </li>
         <li>
-          <Link to="/chat">
+          <Link to="/videoguidance">
             <i className="bx bx-chat" />
-            <span className="links_name">Chat Support</span>
+            <span className="links_name">Video Guidance</span>
           </Link>
-          <span className="tooltip">Chat</span>
+          <span className="tooltip">Guidance</span>
         </li>
         <li>
           <Link to="/payment">

@@ -44,13 +44,19 @@ export default function AccountMenu() {
   // const { url } = accountDatas;
 
   const [url, setUrl] = useState('');
+  const [name, setName] = useState('Profile');
   useEffect(() => {
     if (allUserData === null) {
       setUrl(
-        'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+        'https://i.pinimg.com/564x/74/46/9b/74469bd23df16c22231fcf75b7073fd2.jpg'
       );
     } else {
       setUrl(allUserData.allUserData.url);
+      setName(
+        `${allUserData.allUserData.firstName.toUpperCase()} 
+          
+        ${allUserData.allUserData.lastName.toUpperCase()}`
+      );
     }
   }, [allUserData]);
 
@@ -138,7 +144,7 @@ export default function AccountMenu() {
       >
         <MenuItem style={{ fontSize: '1.4rem' }}>
           <Avatar alt="profile picture" src={url} />
-          Profile
+          {name}
         </MenuItem>
         <MenuItem style={{ fontSize: '1.4rem' }}>
           <Avatar alt="profile picture" src={url} />

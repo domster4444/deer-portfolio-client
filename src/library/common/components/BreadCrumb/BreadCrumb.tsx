@@ -49,7 +49,7 @@ const BreadCrumb = ({ currentPath }: PropTypes) => {
               </Link>
 
               <Typography style={{ fontSize: '2rem' }} color="text.primary">
-                Breadcrumbs
+                WELCOME
               </Typography>
             </Breadcrumbs>
           );

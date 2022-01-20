@@ -15,13 +15,15 @@ import ThemeCard from './components/ThemeCard/ThemeCard';
 
 const allThemes = [
   {
-    url: 'https://akira-elementor.axonvip.com/en/',
-    name: 'Theme 1',
+    isPaid: 'full-premium',
+    url: 'https://buckymaler.com/global/',
+    name: 'Space Template',
     description: 'This is the first theme',
     imageUrl:
-      'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      'https://cdn.freebiesbug.com/wp-content/uploads/2016/08/global-free-psd-html-website-template-580x435.jpg',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 2',
     description: 'This is the second theme',
@@ -29,6 +31,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 3',
     description: 'This is the third theme',
@@ -36,6 +39,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 4',
     description: 'This is the fourth theme',
@@ -43,6 +47,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 5',
     description: 'This is the fifth theme',
@@ -50,6 +55,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 6',
     description: 'This is the sixth theme',
@@ -57,6 +63,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 7',
     description: 'This is the seventh theme',
@@ -64,6 +71,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 8',
     description: 'This is the eighth theme',
@@ -71,6 +79,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 9',
     description: 'This is the ninth theme',
@@ -78,6 +87,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 10',
     description: 'This is the tenth theme',
@@ -86,6 +96,7 @@ const allThemes = [
   },
 
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 11',
     description: 'This is the eleventh theme',
@@ -93,6 +104,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 12',
     description: 'This is the twelfth theme',
@@ -100,6 +112,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 13',
     description: 'This is the thirteenth theme',
@@ -107,6 +120,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 14',
     description: 'This is the fourteenth theme',
@@ -114,6 +128,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 15',
     description: 'This is the fifteenth theme',
@@ -121,6 +136,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 16',
     description: 'This is the sixteenth theme',
@@ -128,6 +144,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 17',
     description: 'This is the seventeenth theme',
@@ -135,6 +152,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 18',
     description: 'This is the eighteenth theme',
@@ -142,6 +160,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 19',
     description: 'This is the nineteenth theme',
@@ -149,6 +168,7 @@ const allThemes = [
       'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   },
   {
+    isPaid: 'not-premium',
     url: 'https://akira-elementor.axonvip.com/en/',
     name: 'Theme 20',
     description: 'This is the twentieth theme',
@@ -172,6 +192,16 @@ const Themes = () => {
         .includes(filter.toString().toLowerCase())
     );
   });
+  const renderAllTheme = () => {
+    setFilter('');
+  };
+  const renderPaidTheme = () => {
+    setFilter('full-premium');
+  };
+  const renderFreeTheme = () => {
+    setFilter('not-premium');
+  };
+
   return (
     <div>
       <DashboardDrawer />
@@ -192,6 +222,27 @@ const Themes = () => {
                 inputChangeHandler(e);
               }}
             />
+            <button
+              onClick={renderAllTheme}
+              type="button"
+              style={{ fontSize: '2rem', margin: '0rem 1rem' }}
+            >
+              ALL THEMES
+            </button>
+            <button
+              onClick={renderPaidTheme}
+              type="button"
+              style={{ fontSize: '2rem', margin: '0rem 1rem' }}
+            >
+              PAID THEMES
+            </button>
+            <button
+              onClick={renderFreeTheme}
+              type="button"
+              style={{ fontSize: '2rem', margin: '0rem 1rem' }}
+            >
+              FREE THEMES
+            </button>
           </div>
           <div className="theme__cardContainer">
             {(() => {

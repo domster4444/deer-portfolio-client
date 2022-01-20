@@ -26,7 +26,9 @@ const Profile = () => {
     firstName = 'undefined';
     lastName = 'undefined';
     email = 'undefined';
-    url = 'undefined';
+    // eslint-disable-next-line operator-linebreak
+    url =
+      'https://i.pinimg.com/564x/74/46/9b/74469bd23df16c22231fcf75b7073fd2.jpg';
   } else {
     const accountDatas = allUserData.allUserData;
     firstName = accountDatas.firstName;
