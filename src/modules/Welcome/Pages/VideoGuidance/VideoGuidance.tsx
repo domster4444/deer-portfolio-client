@@ -18,7 +18,18 @@ const VideoGuidance = () => {
           <AccountMenu />
           <header className="text">Guidance</header>
           <BreadCrumb currentPath="VideoGuidance" />
-
+          <h2
+            style={{
+              width: '100vw',
+              textAlign: 'center',
+              padding: '0.2rem 0rem',
+              fontSize: '2.2rem',
+            }}
+            className="
+            regular"
+          >
+            <u> Intro Video</u>
+          </h2>
           <Video />
         </div>
       </section>
