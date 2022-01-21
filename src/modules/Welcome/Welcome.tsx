@@ -36,7 +36,6 @@ const Welcome = () => {
           </section>
           <section className="chart__container">
             <div className="chart__container__left">
-              <h1>No Of All ALL USER </h1>
               <Header color="blue" />
               <br />
               <p className="light" style={{ fontSize: '1.6rem' }}>

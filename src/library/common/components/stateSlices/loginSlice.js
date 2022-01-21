@@ -1,7 +1,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import axios from 'axios';
+import constant from 'constant';
 
 const initialState = {
   status: 'idle',
@@ -13,7 +15,7 @@ export const loginUser = createAsyncThunk(
   async (loginFormData, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        'http://localhost:5000/api/users/login',
+        `${constant.serverURL}/api/users/login`,
         loginFormData,
         {
           headers: {
@@ -23,8 +25,28 @@ export const loginUser = createAsyncThunk(
           },
         }
       );
+
+      if (data) {
+        toast.success('🦄 LoggedIn Successful', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        console.log('data', data);
+      }
       return data;
     } catch (err) {
+      toast.error('error occured while logging in', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       return rejectWithValue(err.response.data);
     }
   }

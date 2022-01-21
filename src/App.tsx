@@ -3,6 +3,9 @@
 
 // lib
 import React, { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { RootStateOrAny, useSelector, useDispatch } from 'react-redux';
@@ -160,6 +163,7 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
       <LanguageSwitcher />
       <Navigation />
 
