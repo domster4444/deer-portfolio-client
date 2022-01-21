@@ -122,12 +122,12 @@ export default function Form() {
           'USER PROFILE UPDATED SUCCESSFULLY FROM SERVER RESPONSE , THE REPONSE FROM SERVER IS => ',
           returnedResJsonObj
         );
+        setSubmittedState('data submitted');
+        alert('account updated successfully');
       })
       .catch((err) => {
         console.log(err);
       });
-
-    setSubmittedState('data submitted');
   };
   // --------------------------------
 
@@ -219,6 +219,7 @@ export default function Form() {
         />
         <br />
         <TextField
+          disabled
           label="Email"
           id="filled-start-adornment"
           sx={{ m: 1, width: '25ch' }}
