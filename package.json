@@ -24,6 +24,7 @@
     "cloudinary-react": "^1.7.0",
     "faker": "^6.6.6",
     "formik": "^2.2.9",
+    "gsap": "^3.9.1",
     "http-proxy-middleware": "^2.0.1",
     "i18next": "^21.5.4",
     "i18next-browser-languagedetector": "^6.1.2",

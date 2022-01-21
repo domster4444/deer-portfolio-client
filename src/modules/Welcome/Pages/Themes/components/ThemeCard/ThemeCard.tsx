@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { TweenMax, Power3 } from 'gsap';
 
 // ? mui
 import Skeleton from '@mui/material/Skeleton';
@@ -90,18 +91,40 @@ type ThemeProps = {
 // eslint-disable-next-line object-curly-newline
 const ThemeCard = ({ url, name, description, imageUrl }: ThemeProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  let animateThemeCard = useRef(null);
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true);
-    }, 800);
+    }, 400);
+
+    // alert('not loaded');
+    TweenMax.to(animateThemeCard, 0.1, {
+      opacity: 0,
+      scale: 0.1,
+      ease: Power3.easeOut,
+    });
   }, []);
+  useEffect(() => {
+    if (isLoaded === true) {
+      TweenMax.to(animateThemeCard, 0.1, {
+        opacity: 1,
+        scale: 1,
+        ease: Power3.easeOut,
+      });
+    }
+  }, [isLoaded]);
 
   return (
     <>
       {(() => {
         if (isLoaded !== false) {
           return (
-            <ThemeCardSmall>
+            <ThemeCardSmall
+              ref={(el) => {
+                // @ts-ignore
+                animateThemeCard = el;
+              }}
+            >
               <ThemeCardImg src={`${imageUrl}`} alt="" />
               <br />
               {name}
@@ -122,7 +145,12 @@ const ThemeCard = ({ url, name, description, imageUrl }: ThemeProps) => {
           );
         }
         return (
-          <ThemeCardSmall>
+          <ThemeCardSmall
+            ref={(el) => {
+              // @ts-ignore
+              animateThemeCard = el;
+            }}
+          >
             <Stack spacing={1}>
               <Skeleton
                 variant="rectangular"
