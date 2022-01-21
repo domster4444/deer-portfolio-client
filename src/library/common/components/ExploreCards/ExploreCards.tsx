@@ -127,35 +127,6 @@ const SkeletonCard = styled.div`
   }
 `;
 
-export const GreenExploreCard = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
-  }, []);
-  return (
-    <>
-      {(() => {
-        if (isLoaded === true) {
-          return (
-            <GreenCard>
-              <Icon className="bx bx-user" />
-              <span className="regular">455</span>
-              <EditMenu />
-            </GreenCard>
-          );
-        }
-        return (
-          <SkeletonCard>
-            <ExploreCardSkeleton />
-          </SkeletonCard>
-        );
-      })()}
-    </>
-  );
-};
 export const BlueExploreCard = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -192,7 +163,7 @@ export const BlueExploreCard = () => {
           return (
             <BlueCard>
               <Icon className="bx bx-user" />
-              <span className="regular">Users: {noOfUsers}</span>
+              <span className="regular">ALL Users: {noOfUsers}</span>
               <EditMenu />
             </BlueCard>
           );
@@ -209,10 +180,30 @@ export const BlueExploreCard = () => {
 export const RedExploreCard = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const [noOfFreeUsers, setNoOfFreeUsers] = useState(0);
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
+    console.log(
+      'LOCAL STORAGE ITEMS --GETALLUSRS.tsx',
+      // @ts-ignore
+      JSON.parse(localStorage.getItem('loggedInUser'))
+    );
+
+    fetch('http://localhost:5000/api/users/free', {
+      method: 'GET',
+      // @ts-ignore
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': true,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('all FREE USER', data);
+        setNoOfFreeUsers(data.results);
+
+        setIsLoaded(true);
+      })
+      .catch((err) => console.log(err));
   }, []);
   return (
     <>
@@ -221,7 +212,7 @@ export const RedExploreCard = () => {
           return (
             <RedCard>
               <Icon className="bx bx-user" />
-              <span className="regular">455</span>
+              <span className="regular">FREE USERS: {noOfFreeUsers}</span>
               <EditMenu />
             </RedCard>
           );
@@ -235,14 +226,65 @@ export const RedExploreCard = () => {
     </>
   );
 };
+
+export const GreenExploreCard = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  setTimeout(() => {
+    setIsLoaded(true);
+  }, 3000);
+
+  const [noOfPremiumUser, setNoOfPremiumUser] = useState(0);
+  useEffect(() => {
+    console.log(
+      'LOCAL STORAGE ITEMS --GETALLUSRS.tsx',
+      // @ts-ignore
+      JSON.parse(localStorage.getItem('loggedInUser'))
+    );
+
+    fetch('http://localhost:5000/api/users/premium', {
+      method: 'GET',
+      // @ts-ignore
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': true,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('all FREE USER', data);
+        setNoOfPremiumUser(data.results);
+        setIsLoaded(true);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <>
+      {(() => {
+        if (isLoaded === true) {
+          return (
+            <GreenCard>
+              <Icon className="bx bx-user" />
+              <span className="regular">PREMIUM USER: {noOfPremiumUser}</span>
+              <EditMenu />
+            </GreenCard>
+          );
+        }
+        return (
+          <SkeletonCard>
+            <ExploreCardSkeleton />
+          </SkeletonCard>
+        );
+      })()}
+    </>
+  );
+};
+
 export const PinkExploreCard = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
-  }, []);
+  setTimeout(() => {
+    setIsLoaded(true);
+  }, 3000);
   return (
     <>
       {(() => {
@@ -250,7 +292,7 @@ export const PinkExploreCard = () => {
           return (
             <PinkCard>
               <Icon className="bx bx-user" />
-              <span className="regular">455</span>
+              <span className="regular">745</span>
               <EditMenu />
             </PinkCard>
           );
