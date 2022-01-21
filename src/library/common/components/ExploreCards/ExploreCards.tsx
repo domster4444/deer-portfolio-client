@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import EditMenu from 'library/common/components/EditMenu/EditMenu';
@@ -124,15 +125,6 @@ const SkeletonCard = styled.div`
     bottom: 1rem;
     left: 1rem;
   }
-
-  &:hover {
-    span {
-      color: black;
-    }
-
-    background-color: #f5f5f5;
-    border: 1px solid lightgreen;
-  }
 `;
 
 export const GreenExploreCard = () => {
@@ -167,11 +159,32 @@ export const GreenExploreCard = () => {
 export const BlueExploreCard = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const [noOfUsers, setNoOfUsers] = useState(0);
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
+    console.log(
+      'LOCAL STORAGE ITEMS --GETALLUSRS.tsx',
+      // @ts-ignore
+      JSON.parse(localStorage.getItem('loggedInUser'))
+    );
+
+    fetch('http://localhost:5000/api/users/all', {
+      method: 'GET',
+      // @ts-ignore
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': true,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('data', data);
+        console.log('no of users', data.results);
+        setNoOfUsers(data.results);
+        setIsLoaded(true);
+      })
+      .catch((err) => console.log(err));
   }, []);
+
   return (
     <>
       {(() => {
@@ -179,7 +192,7 @@ export const BlueExploreCard = () => {
           return (
             <BlueCard>
               <Icon className="bx bx-user" />
-              <span className="regular">455</span>
+              <span className="regular">Users: {noOfUsers}</span>
               <EditMenu />
             </BlueCard>
           );

@@ -14,7 +14,13 @@ export const loginUser = createAsyncThunk(
     try {
       const { data } = await axios.post(
         'http://localhost:5000/api/users/login',
-        loginFormData
+        loginFormData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': true,
+          },
+        }
       );
       return data;
     } catch (err) {

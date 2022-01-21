@@ -261,7 +261,7 @@ export default function Form() {
           onChange={(e) => setZipCode(e.target.value)}
         />
 
-        <UnstyledButtonsSimple name="Upload" />
+        <UnstyledButtonsSimple name="Update Profile" />
       </div>
     </form>
   );
