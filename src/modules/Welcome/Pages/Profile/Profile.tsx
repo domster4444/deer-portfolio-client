@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import { RootStateOrAny, useSelector } from 'react-redux';
+// import constant from 'constant';
 
 import './Profile.css';
 // dummy image
@@ -15,27 +16,21 @@ import Form from './components/Form/Form';
 import Upload from './components/Upload/Upload';
 
 const Profile = () => {
+  let url: string;
   const { allUserData } = useSelector(
     (state: RootStateOrAny) => state.allUserDataState
   );
-  let firstName: string;
-  let lastName: string;
-  let email: string;
-  let url: string;
-  if (allUserData === null) {
-    firstName = 'undefined';
-    lastName = 'undefined';
-    email = 'undefined';
-    // eslint-disable-next-line operator-linebreak
-    url =
-      'https://i.pinimg.com/564x/74/46/9b/74469bd23df16c22231fcf75b7073fd2.jpg';
-  } else {
-    const accountDatas = allUserData.allUserData;
-    firstName = accountDatas.firstName;
-    lastName = accountDatas.lastName;
-    email = accountDatas.email;
-    url = accountDatas.url;
-  }
+  (() => {
+    if (allUserData !== null) {
+      const allAccountData = allUserData.allUserData;
+      url = allAccountData.url;
+    } else {
+      // eslint-disable-next-line operator-linebreak
+      url =
+        'https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?s=612x612';
+    }
+  })();
+
   return (
     <>
       <DashboardDrawer />
@@ -50,23 +45,11 @@ const Profile = () => {
               <h5 className="light">Edit Profile</h5>
             </header>
             <div className="profile__imagecontainer">
-              <img
-                src={
-                  url !== ''
-                    ? url
-                    : 'https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?s=612x612'
-                }
-                alt=""
-              />
+              <img src={url} alt="" />
               <Upload />
             </div>
 
-            <Form
-              firstName={firstName}
-              lastName={lastName}
-              email={email}
-              url={url}
-            />
+            <Form />
           </section>
         </div>
       </section>

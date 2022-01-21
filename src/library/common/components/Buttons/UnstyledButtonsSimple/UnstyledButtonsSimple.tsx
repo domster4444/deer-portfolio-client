@@ -55,6 +55,7 @@ export default function UnstyledButtonsSimple({ name }: BtnPropsTypes) {
   return (
     <Stack spacing={2} direction="row">
       <CustomButton
+        type="submit"
         style={{ fontSize: '2rem', fontWeight: 'lighter', margin: '1rem 0rem' }}
       >
         {name}
