@@ -36,6 +36,7 @@ import FirstTheme from 'themes/1FirstTheme/FirstTheme';
 import VideoGuidance from 'modules/Welcome/Pages/VideoGuidance/VideoGuidance';
 import ChatBox from 'library/common/components/ChatBox/ChatBox';
 import PageNotFound from 'modules/PageNotFound/PageNotFound';
+import Details from 'modules/Welcome/Pages/Details/Details';
 
 const App = () => {
   const navigate = useNavigate();
@@ -238,6 +239,16 @@ const App = () => {
           path="/themes"
           element={
             loggedInUser === null && authOUser === null ? <Login /> : <Themes />
+          }
+        />
+        <Route
+          path="/details"
+          element={
+            loggedInUser === null && authOUser === null ? (
+              <Login />
+            ) : (
+              <Details />
+            )
           }
         />
         <Route

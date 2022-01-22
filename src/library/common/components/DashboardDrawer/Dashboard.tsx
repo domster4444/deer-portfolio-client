@@ -1,13 +1,18 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable object-curly-newline */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from 'library/common/components/stateSlices/loginSlice';
 import { setAuthOLogoutState } from 'features/AuthOLoggedInUser/AuthOStateSlice';
 import constant from 'constant';
+import DropDown from 'library/common/components/Menu/DropDown/DropDown';
+import './Fix.css';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -54,6 +59,9 @@ const Dashboard = () => {
 
     // following are the code to change sidebar button(optional)
   }, []);
+
+  const [opened, setOpened] = useState(false);
+
   return (
     <div className="sidebar">
       <div className="logo-details">
@@ -69,7 +77,7 @@ const Dashboard = () => {
         </li>
         <li>
           <Link to="/welcome">
-            <i className="bx bx-grid-alt" />
+            <i className="bx bx-pie-chart-alt-2" />
             <span className="links_name">Dashboard</span>
           </Link>
           <span className="tooltip">Dashboard</span>
@@ -89,11 +97,11 @@ const Dashboard = () => {
           <span className="tooltip">Themes</span>
         </li>
         <li>
-          <Link to="https://google.com">
-            <i className="bx bx-pie-chart-alt-2" />
-            <span className="links_name">Analytics</span>
+          <Link to="/details">
+            <i className="bx bx-grid-alt" />
+            <span className="links_name">My Details</span>
           </Link>
-          <span className="tooltip">Analytics</span>
+          <span className="tooltip">Details</span>
         </li>
         <li>
           <Link to="/videoguidance">
@@ -109,20 +117,20 @@ const Dashboard = () => {
           </Link>
           <span className="tooltip">Order</span>
         </li>
-        <li>
+        {/* <li>
           <Link to="https://google.com">
             <i className="bx bx-heart" />
             <span className="links_name">Saved</span>
           </Link>
           <span className="tooltip">Saved</span>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link to="https://google.com">
             <i className="bx bx-cog" />
             <span className="links_name">Setting</span>
           </Link>
           <span className="tooltip">Setting</span>
-        </li>
+        </li> */}
         <li className="profile">
           <button
             style={{
@@ -138,6 +146,21 @@ const Dashboard = () => {
             <i className="bx bx-log-out" id="log_out" />
           </button>
         </li>
+        {/* .,.,.,.,.,.,.,.,.,.,....................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
+
+        <li
+          onClick={() => {
+            setOpened(!opened);
+          }}
+        >
+          <div className="changeColorToBlackOnHover">
+            <i className="bx bx-grid-alt" />
+            {/* <span className="links_name">Setting</span> */}
+            <DropDown opened={opened} />
+          </div>
+          <span className="tooltip">Setup Details</span>
+        </li>
+        {/* .,.,.,.,.,.,.,.,.,.,....................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
       </ul>
     </div>
   );
