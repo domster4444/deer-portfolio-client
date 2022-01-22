@@ -16,14 +16,7 @@ export const loginUser = createAsyncThunk(
     try {
       const { data } = await axios.post(
         `${constant.serverURL}/api/users/login`,
-        loginFormData,
-        {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': true,
-          },
-        }
+        loginFormData
       );
 
       if (data) {
@@ -47,6 +40,7 @@ export const loginUser = createAsyncThunk(
         pauseOnHover: true,
         draggable: true,
       });
+      console.log('err occured while loggin in is ==', err);
       return rejectWithValue(err.response.data);
     }
   }

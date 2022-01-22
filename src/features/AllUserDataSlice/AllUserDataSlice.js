@@ -22,7 +22,7 @@ export const allUserStateSlice = createSlice({
     },
     //! the ()=> takes "state" as parameter. the state has the initialState
     resetAllUserData: (state) => {
-      state.user = null;
+      state.allUserData = null;
     },
   },
 });

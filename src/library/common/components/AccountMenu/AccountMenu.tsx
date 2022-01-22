@@ -30,7 +30,10 @@ export default function AccountMenu() {
     // @ts-ignore: Unreachable code error
     dispatch(logout());
     localStorage.removeItem('loggedInUser');
-    navigate('/');
+
+    setTimeout(() => {
+      navigate('/');
+    }, 3000);
   };
 
   const { allUserData } = useSelector(

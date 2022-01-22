@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-wrap-multilines */
 import React, { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import constant from 'constant';
 
 import IconButton from '@mui/material/IconButton';
@@ -123,7 +124,15 @@ export default function Form() {
           returnedResJsonObj
         );
         setSubmittedState('data submitted');
-        alert('account updated successfully');
+
+        toast.success('🦄 Profile Updated Successfully', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       })
       .catch((err) => {
         console.log(err);

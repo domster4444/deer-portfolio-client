@@ -141,10 +141,6 @@ export const BlueExploreCard = () => {
     fetch('http://localhost:5000/api/users/all', {
       method: 'GET',
       // @ts-ignore
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': true,
-      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -191,10 +187,6 @@ export const RedExploreCard = () => {
     fetch('http://localhost:5000/api/users/free', {
       method: 'GET',
       // @ts-ignore
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': true,
-      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -244,10 +236,6 @@ export const GreenExploreCard = () => {
     fetch('http://localhost:5000/api/users/premium', {
       method: 'GET',
       // @ts-ignore
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': true,
-      },
     })
       .then((res) => res.json())
       .then((data) => {
