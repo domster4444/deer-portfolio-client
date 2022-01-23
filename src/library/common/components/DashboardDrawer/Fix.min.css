@@ -1,0 +1,1 @@
+.changeColorToBlackOnHover{color:white;transition:all ease-in-out 350ms;display:flex;align-items:center;border-radius:0.85rem}.changeColorToBlackOnHover:hover{color:black;transition:all ease-in-out 200ms;background-color:white}.changeColorToBlackOnHover:hover i{color:black}.changeColorToBlackOnHover:hover ul a li{color:black}.profile{z-index:1000}

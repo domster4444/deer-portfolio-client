@@ -1,0 +1,36 @@
+#DropDownSection {
+  width: 100%;
+  transition: all ease-in-out 200ms;
+}
+
+#DropDownSection ul a {
+  width: 95%;
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: white;
+  margin: 0.55rem 0rem;
+}
+
+#DropDownSection ul a:hover {
+  transition: all ease-in-out 300ms;
+  background-color: #11101d;
+}
+
+#DropDownSection ul a:hover li {
+  color: white;
+}
+
+#DropDownSection ul li {
+  transition: all ease-in-out 500ms;
+  border-radius: 0.75rem;
+  margin: 0.55rem 0.5rem;
+  padding: 1rem 1rem;
+}
+
+.sidebar li {
+  overflow: hidden;
+}
+
+.sidebar.open {
+  overflow-y: scroll;
+}

@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { useState } from 'react';
 import ScrollToTop from 'react-scroll-to-top';
+import Pagination from 'library/common/components/Pagination/Pagination';
 
 import './Themes.css';
 
@@ -256,8 +257,8 @@ const Themes = () => {
                 />
               ));
             })()}
+            <Pagination />
           </div>
-          j
         </div>
       </section>
     </div>
