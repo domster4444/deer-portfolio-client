@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import ButtonUnstyled, {
   buttonUnstyledClasses,
@@ -50,16 +51,40 @@ function CustomButton(props: ButtonUnstyledProps) {
 
 type BtnPropsTypes = {
   name: string;
+  // eslint-disable-next-line react/require-default-props
+  path?: string;
 };
-export default function UnstyledButtonsSimple({ name }: BtnPropsTypes) {
+export default function UnstyledButtonsSimple({ name, path }: BtnPropsTypes) {
+  if (path === 'null') {
+    return (
+      <Stack spacing={2} direction="row">
+        <CustomButton
+          type="submit"
+          style={{
+            fontSize: '2rem',
+            fontWeight: 'lighter',
+            margin: '1rem 0rem',
+          }}
+        >
+          {name}
+        </CustomButton>
+      </Stack>
+    );
+  }
   return (
-    <Stack spacing={2} direction="row">
-      <CustomButton
-        type="submit"
-        style={{ fontSize: '2rem', fontWeight: 'lighter', margin: '1rem 0rem' }}
-      >
-        {name}
-      </CustomButton>
-    </Stack>
+    <Link to={path != null ? path : '/'}>
+      <Stack spacing={2} direction="row">
+        <CustomButton
+          type="submit"
+          style={{
+            fontSize: '2rem',
+            fontWeight: 'lighter',
+            margin: '1rem 0rem',
+          }}
+        >
+          {name}
+        </CustomButton>
+      </Stack>
+    </Link>
   );
 }

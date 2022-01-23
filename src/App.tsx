@@ -36,7 +36,13 @@ import FirstTheme from 'themes/1FirstTheme/FirstTheme';
 import VideoGuidance from 'modules/Welcome/Pages/VideoGuidance/VideoGuidance';
 import ChatBox from 'library/common/components/ChatBox/ChatBox';
 import PageNotFound from 'modules/PageNotFound/PageNotFound';
-import Details from 'modules/Welcome/Pages/Details/Details';
+import Bio from 'modules/Welcome/Pages/Details/Bio/Bio';
+import Contacts from 'modules/Welcome/Pages/Details/Contacts/Contacts';
+import Education from 'modules/Welcome/Pages/Details/Education/Education';
+import Projects from 'modules/Welcome/Pages/Details/Projects/Projects';
+import Work from 'modules/Welcome/Pages/Details/Work/Work';
+import Skills from 'modules/Welcome/Pages/Details/Skills/Skills';
+import Achievements from 'modules/Welcome/Pages/Details/Achievements/Achievements';
 
 const App = () => {
   const navigate = useNavigate();
@@ -242,13 +248,67 @@ const App = () => {
           }
         />
         <Route
-          path="/details"
+          path="/bio"
+          element={
+            loggedInUser === null && authOUser === null ? <Login /> : <Bio />
+          }
+        />
+        <Route
+          path="/contacts"
           element={
             loggedInUser === null && authOUser === null ? (
               <Login />
             ) : (
-              <Details />
+              <Contacts />
             )
+          }
+        />
+        <Route
+          path="/education"
+          element={
+            loggedInUser === null && authOUser === null ? (
+              <Login />
+            ) : (
+              <Education />
+            )
+          }
+        />
+        <Route
+          path="/work"
+          element={
+            loggedInUser === null && authOUser === null ? <Login /> : <Work />
+          }
+        />
+        <Route
+          path="/skills"
+          element={
+            loggedInUser === null && authOUser === null ? <Login /> : <Skills />
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            loggedInUser === null && authOUser === null ? (
+              <Login />
+            ) : (
+              <Projects />
+            )
+          }
+        />
+        <Route
+          path="/achievements"
+          element={
+            loggedInUser === null && authOUser === null ? (
+              <Login />
+            ) : (
+              <Achievements />
+            )
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            loggedInUser === null && authOUser === null ? <Login /> : <Bio />
           }
         />
         <Route

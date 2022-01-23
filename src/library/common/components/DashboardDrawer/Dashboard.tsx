@@ -96,13 +96,13 @@ const Dashboard = () => {
           </Link>
           <span className="tooltip">Themes</span>
         </li>
-        <li>
+        {/* <li>
           <Link to="/details">
             <i className="bx bx-grid-alt" />
             <span className="links_name">My Details</span>
           </Link>
           <span className="tooltip">Details</span>
-        </li>
+        </li> */}
         <li>
           <Link to="/videoguidance">
             <i className="bx bx-chat" />
