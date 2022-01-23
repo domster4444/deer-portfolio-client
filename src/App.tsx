@@ -336,16 +336,7 @@ const App = () => {
           // @ts-ignore
           element={<PasswordResetFormPassword />}
         />
-        <Route
-          path="/first-theme"
-          element={
-            loggedInUser !== null || authOUser !== null ? (
-              <FirstTheme />
-            ) : (
-              <Login />
-            )
-          }
-        />
+        <Route path="/first-theme/:themeId" element={<FirstTheme />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

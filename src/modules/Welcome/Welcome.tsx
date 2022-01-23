@@ -1,6 +1,7 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Welcome.css';
 import DashboardDrawer from 'library/common/components/DashboardDrawer/DashboardDrawer';
 
@@ -37,6 +38,11 @@ const Welcome = () => {
           <section className="chart__container">
             <div className="chart__container__left">
               <Header color="blue" />
+              <h1>ROUTES TO THEMES</h1>
+              <Link to="/first-theme/kshitiz">
+                <u>First Theme</u>
+              </Link>
+              <hr />
               <br />
               <p className="light" style={{ fontSize: '1.6rem' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit id

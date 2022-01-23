@@ -1,249 +1,196 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-// @ts-ignore
-import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
+import './FirstTheme.css';
 
-import './assets/css/main.css';
+// images
+import MainImage from 'themes/1FirstTheme/img/main-img.png';
 
-const index = () => {
+const FirstTheme = () => {
+  // ? GET CURRENT WINDOW LOCATION
+  const currentLocation = useLocation();
+  const currentPath = currentLocation.pathname;
+  const currentPathArray = currentPath.split('/');
+  const currentPathArrayLength = currentPathArray.length;
+  const currentPathArrayLastItem = currentPathArray[currentPathArrayLength - 1];
+  // console.log('currentLocation =', currentLocation);
+  // console.log('currentPath =', currentPath);
+  // console.log('currentPathArray =', currentPathArray);
+  // console.log('currentPathArrayLength =', currentPathArrayLength);
+  console.log('currentPathArrayLastItem =', currentPathArrayLastItem);
+
   return (
-    <main id="first-theme-main">
-      <html lang="en">
-        <body className="is-preload">
-          {/* <!-- Header --> */}
-          <section id="header">
-            <header className="major">
-              <h1>Hi There</h1>
-              <p>
-                This is Kshitiz
-                <a href="http://html5up.net"> hire me </a>
-              </p>
-            </header>
-            <div className="container">
-              <ul className="actions special">
-                <li>
-                  <a href="#one" className="button primary scrolly">
-                    Begin
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </section>
+    <div id="firstTheme">
+      <body>
+        {/* <!----hero Section start----> */}
 
-          {/* <!-- One --> */}
-          <section id="one" className="main special">
-            <div className="container">
-              <span className="image fit primary">
-                <img src="images/pic01.jpg" alt="" />
-              </span>
-              <div className="content">
-                <header className="major">
-                  <h2>Who I am</h2>
-                </header>
-                <p>
-                  Aliquam ante ac id. Adipiscing interdum lorem praesent fusce
-                  pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed
-                  adipiscing eu amet interdum lorem blandit vis ac commodo
-                  aliquet integer vulputate phasellus lorem ipsum dolor lorem
-                  magna consequat sed etiam adipiscing interdum.
-                </p>
-              </div>
+        <div className="hero">
+          <nav>
+            <h2 className="logo">
+              Portfo<span>lio</span>
+            </h2>
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Skills</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
+            </ul>
+            <a href="#" className="btn">
+              Subscribe
+            </a>
+          </nav>
 
-              <a href="#two" className="goto-next scrolly">
-                Next
-              </a>
-            </div>
-          </section>
-
-          {/* <!-- Two --> */}
-          <section id="two" className="main special">
-            <div className="container">
-              <span className="image fit primary">
-                <img src="images/pic02.jpg" alt="" />
-              </span>
-              <div className="content">
-                <header className="major">
-                  <h2>Stuff I do</h2>
-                </header>
-                <p>
-                  Consequat sed ultricies rutrum. Sed adipiscing eu amet
-                  interdum lorem blandit vis ac commodo aliquet vulputate.
-                </p>
-                <ul className="icons-grid">
-                  <li>
-                    <span className="icon solid major fa-camera-retro" />
-                    <h3>Magna Etiam</h3>
-                  </li>
-                  <li>
-                    <span className="icon solid major fa-pencil-alt" />
-                    <h3>Lorem Ipsum</h3>
-                  </li>
-                  <li>
-                    <span className="icon solid major fa-code" />
-                    <h3>Nulla Tempus</h3>
-                  </li>
-                  <li>
-                    <span className="icon solid major fa-coffee" />
-                    <h3>Sed Feugiat</h3>
-                  </li>
-                </ul>
-              </div>
-
-              <a href="#three" className="goto-next scrolly">
-                Next
-              </a>
-            </div>
-          </section>
-
-          {/* <!-- Three --> */}
-          <section id="three" className="main special">
-            <div className="container">
-              <span className="image fit primary">
-                <img src="images/pic03.jpg" alt="" />
-              </span>
-              <div className="content">
-                <header className="major">
-                  <h2>One more thing</h2>
-                </header>
-                <p>
-                  Aliquam ante ac id. Adipiscing interdum lorem praesent fusce
-                  pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed
-                  adipiscing eu amet interdum lorem blandit vis ac commodo
-                  aliquet integer vulputate phasellus lorem ipsum dolor lorem
-                  magna consequat sed etiam adipiscing interdum.
-                </p>
-              </div>
-
-              <a href="#footer" className="goto-next scrolly">
-                Next
-              </a>
-            </div>
-          </section>
-
-          {/* <!-- Footer --> */}
-          <section id="footer">
-            <div className="container">
-              <header className="major">
-                <h2>Get in touch</h2>
-              </header>
-              <form method="post" action="#">
-                <div className="row gtr-uniform">
-                  <div className="col-6 col-12-xsmall">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="col-6 col-12-xsmall">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="col-12">
-                    <textarea
-                      name="message"
-                      id="message"
-                      placeholder="Message"
-                      rows={4}
-                    />
-                  </div>
-                  <div className="col-12">
-                    <ul className="actions special">
-                      <li>
-                        <input
-                          type="submit"
-                          value="Send Message"
-                          className="primary"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+          <div className="content" style={{ color: 'white' }}>
+            <h4>Hello, my name is</h4>
+            <h1>
+              Tahmid <span>Ahmed</span>
+            </h1>
+            <h3>I'am a Web Developer.</h3>
+            <div className="newslatter">
+              <form>
+                <input
+                  type="email"
+                  name="email"
+                  id="mail"
+                  placeholder="Enter Your Email"
+                />
+                <input type="submit" name="submit" value="Lets Start" />
               </form>
             </div>
-            <footer>
-              <ul className="icons">
-                <li>
-                  <a
-                    href="https://www.google.com"
-                    className="icon brands alt fa-twitter"
-                  >
-                    <span className="label">Twitter</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.google.com"
-                    className="icon brands alt fa-facebook-f"
-                  >
-                    <span className="label">Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.google.com"
-                    className="icon brands alt fa-instagram"
-                  >
-                    <span className="label">Instagram</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.google.com"
-                    className="icon brands alt fa-dribbble"
-                  >
-                    <span className="label">Dribbble</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.google.com"
-                    className="icon solid alt fa-envelope"
-                  >
-                    <span className="label">Email</span>
-                  </a>
-                </li>
-              </ul>
-              <ul className="copyright">
-                <li>&copy; Untitled</li>
-                <li>
-                  Design:
-                  <a href="http://html5up.net">HTML5 UP</a>
-                </li>
-                <li>
-                  Demo Images:
-                  <a href="http://unsplash.com">Unsplash</a>
-                </li>
-              </ul>
-            </footer>
-          </section>
+          </div>
+        </div>
 
-          <Helmet>
-            <script src="assets/js/jquery.min.js" />
-            <script src="assets/js/jquery.scrollex.min.js" />
-            <script src="assets/js/jquery.scrolly.min.js" />
-            <script src="assets/js/browser.min.js" />
-            <script src="assets/js/breakpoints.min.js" />
-            <script src="assets/js/util.js" />
-            <script src="assets/js/main.js" />
-          </Helmet>
+        {/* <!----About section start----> */}
+        <section className="about">
+          <div className="main">
+            <img src={MainImage} alt="sample potrait" />
+            <div className="about-text">
+              <h2>About Me</h2>
+              <h5>
+                Developer <span>& Designer</span>
+              </h5>
+              <p>
+                I am a front-end web developer. I can provide clean code and
+                pixel perfect design. I also make the website more & more
+                interactive with web animations.I can provide clean code and
+                pixel perfect design. I also make the website more & more
+                interactive with web animations.A responsive design makes your
+                website accessible to all users, regardless of their device.
+              </p>
+              <button type="button">Let's Talk</button>
+            </div>
+          </div>
+        </section>
 
-          {/* <!-- Scripts --> */}
-          {/* <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrollex.min.js"></script>
-      <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script> */}
-        </body>
-      </html>
-    </main>
+        {/* <!-----service section start-----------> */}
+        <div className="service">
+          <div className="title">
+            <h2>Our Services</h2>
+          </div>
+
+          <div className="box">
+            <div className="card">
+              <i className="fas fa-bars" />
+              <h5>Web Development</h5>
+              <div className="pra">
+                <p>
+                  Every website should be built with two primary goals: Firstly,
+                  it needs to work across all devices. Secondly, it needs to be
+                  fast as possible.
+                </p>
+
+                <p style={{ textAlign: 'center' }}>
+                  <a className="button" href="#">
+                    Read More
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="card">
+              <i className="far fa-user" />
+              <h5>Web Development</h5>
+              <div className="pra">
+                <p>
+                  Every website should be built with two primary goals: Firstly,
+                  it needs to work across all devices. Secondly, it needs to be
+                  fast as possible.
+                </p>
+
+                <p style={{ textAlign: 'center' }}>
+                  <a className="button" href="#">
+                    Read More
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="card">
+              <i className="far fa-bell" />
+              <h5>Web Development</h5>
+              <div className="pra">
+                <p>
+                  Every website should be built with two primary goals: Firstly,
+                  it needs to work across all devices. Secondly, it needs to be
+                  fast as possible.
+                </p>
+
+                <p style={{ textAlign: 'center' }}>
+                  <a className="button" href="#">
+                    Read More
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <!------Contact Me------> */}
+        <div className="contact-me">
+          <p>Let Me Get You A Beautiful Website.</p>
+          <a className="button-two" href="#">
+            Hire Me
+          </a>
+        </div>
+
+        {/* <!------footer start---------> */}
+        <footer>
+          <p>Tahmid Ahmed</p>
+          <p>
+            For more HTML, CSS, and coding tutorial - please click on the link
+            below to subscribe to my channel:
+          </p>
+          <div className="social">
+            <a href="#">
+              <i className="fab fa-facebook-f" />
+            </a>
+            <a href="#">
+              <i className="fab fa-instagram" />
+            </a>
+            <a href="#">
+              <i className="fab fa-dribbble" />
+            </a>
+          </div>
+          <p className="end">CopyRight By Tahmid Ahmed</p>
+        </footer>
+      </body>
+    </div>
   );
 };
 
-export default index;
+export default FirstTheme;
